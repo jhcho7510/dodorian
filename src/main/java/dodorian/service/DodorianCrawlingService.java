@@ -47,6 +47,7 @@ public class DodorianCrawlingService {
             
             logger.info("idx ----------------->: "+idx + " , tdContents size --------------> " + tdContents.size() + " , thContents size --------------> " + thContents.size());
 
+            
             StringBuffer sbf = new StringBuffer();
             if(tdContents.size() > 1) {
             	String td1th = tdContents.get(0).text();
