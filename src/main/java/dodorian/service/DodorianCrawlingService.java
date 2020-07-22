@@ -71,8 +71,6 @@ public class DodorianCrawlingService {
             logger.info("-----------------------------------------------------------------------------");
 		}
 		
-		
-		//logger.info(doc.toString());
 	}
 	
 }
