@@ -1,5 +1,6 @@
 package dodorian.service;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -25,10 +26,13 @@ public class DodorianService {
 	 private double stockSecondPrice; // 기업가치 2차 할인가
      */
 	
-     @Autowired
+	@Autowired
      private FileIO fileIO;
+	
+	@Autowired
+	private DodorianCrawlingService crawlingService;
 
-     private final Logger logger   = (Logger) LoggerFactory.getLogger(this.getClass().getSimpleName());
+     private  Logger logger   = (Logger) LoggerFactory.getLogger(this.getClass().getSimpleName());
 
 
      private double patientValue(double stockSecondValue) {
@@ -42,7 +46,9 @@ public class DodorianService {
 		 return df.format(stockPrice);
 	 }
 	
-	 public void dotoriRun() {
+	 public void dotoriRun() throws IOException {
+		 
+		 crawlingService.getCompanyList();
 		//String filePath = "C:\\workspace\\dotori\\src\\main\\resources\\static\\candidate_1.txt";
 	     String filePath = "/home/jhcho/workspace/dodorian/src/main/resources/static/candidate.txt";
 	
