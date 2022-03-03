@@ -8,12 +8,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+
+
 import dodorian.service.DodorianService;
+
+import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
 @ComponentScan
 @EnableAutoConfiguration
 @EnableAspectJAutoProxy
+@Slf4j
 public class DodorianApplication implements CommandLineRunner {
 	@Autowired
 	DodorianService service;
@@ -23,6 +28,7 @@ public class DodorianApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		System.out.println("11111111");
 		// TODO Auto-generated method stub
 		service.dotoriRun();
 		
