@@ -33,3 +33,5 @@ build/
 ## ETC ##
 *.class
 **/bin/
+.metadata/
+*.bak
