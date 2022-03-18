@@ -19,10 +19,19 @@
 	</properties>
 
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-starter-batch</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- [Begin] 2022.03.18 add to mysql & mybatis dependencies   -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.16</version>
+		</dependency>
+		 <dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>1.3.2</version>
+		</dependency>	
+		<!-- [End] 2022.03.18 add to mysql & mybatis dependencies   -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -52,11 +61,6 @@
     		<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.kafka</groupId> -->
-<!-- 			<artifactId>spring-kafka</artifactId> -->
-<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -96,3 +100,14 @@
 	</build>
 
 </project>
+
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.boot</groupId> -->
+<!-- 			<artifactId>spring-boot-starter-batch</artifactId> -->
+<!-- 		</dependency> -->
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.kafka</groupId> -->
+<!-- 			<artifactId>spring-kafka</artifactId> -->
+<!-- 		</dependency> -->
