@@ -45,6 +45,10 @@ public class DodorianService {
 		 DecimalFormat df = new DecimalFormat("#,###");
 		 return df.format(stockPrice);
 	 }
+	 
+	 public List<DodorianDTO> getList() {
+		 return null; 
+	 }
 	
 	 public void dotoriRun() throws IOException {
 		 
