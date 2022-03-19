@@ -54,8 +54,8 @@ public class DodorianService {
 		 
 		 crawlingService.getCompanyList();
 		//String filePath = "C:\\workspace\\dotori\\src\\main\\resources\\static\\candidate_1.txt";
-//	     String filePath = "/home/jhcho/workspace/dodorian/src/main/resources/static/candidate.txt";
-	     String filePath = "C:\\Users\\SKTelecom\\Documents\\dodorian\\src\\main\\resources\\static\\candidate.txt";
+	     String filePath = "//Users/jhcho/dodorian/src/main/resources/static/candidate.txt";
+//	     String filePath = "C:\\Users\\SKTelecom\\Documents\\dodorian\\src\\main\\resources\\static\\candidate.txt";
 	
 	     List<String> candidateList = fileIO.getStockInfoList(filePath);
          int idx  = 1;
