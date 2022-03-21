@@ -1,0 +1,14 @@
+[2022.03.21]
+@Slf4j 사용시 log cannot be resolved 에러 처리
+전자정부 3.5에서 3.8로 변경 후 log cannot be resolved 에러가 사라지지않는 문제가 발생했다.
+
+	검색 결과 아래과 같이 처리함
+	1. 이클립스의 Maven Dependencies 에서 lombok-1.18.8.jar 파일을 찾는다.
+	2. lombok-1.18.8.jar 파일을 우클릭 -> run as -> java application -> 프로세스 진행
+	3. lombok jar 파일이 실행되며 install 창이 표시된다.
+	4. specify location -> 이클립스 위치의 eclipse.ini 를 선택 -> install/update 진행
+	5. install 이 정상적으로 실행 된다.
+	6. 이클립스로 돌아와 프로젝트를 clean -> restart 한다.
+	7. log 관련 에러가 사라진다.
+
+	https://parinote.tistory.com/23
