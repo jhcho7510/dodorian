@@ -4,16 +4,19 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ch.qos.logback.classic.Logger;
+// import ch.qos.logback.classic.Logger;
 import dodorian.common.FileIO;
 import dodorian.dto.DodorianDTO;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Service
+@Slf4j
 public class DodorianService {
 	 /*
 	 private String companyName; // 기업명
@@ -32,7 +35,8 @@ public class DodorianService {
 	@Autowired
 	private DodorianCrawlingService crawlingService;
 
-     private  Logger logger   = (Logger) LoggerFactory.getLogger(this.getClass().getSimpleName());
+     // private  Logger logger   = (Logger) LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
      private double patientValue(double stockSecondValue) {
@@ -55,7 +59,7 @@ public class DodorianService {
 		 crawlingService.getCompanyList();
 		//String filePath = "C:\\workspace\\dotori\\src\\main\\resources\\static\\candidate_1.txt";
 //	     String filePath = "/home/jhcho/workspace/dodorian/src/main/resources/static/candidate.txt";
-	     String filePath = "C:\\Users\\SKTelecom\\Documents\\dodorian\\src\\main\\resources\\static\\candidate.txt";
+	     String filePath = "C:\\workspace\\dodorian\\src\\main\\resources\\static\\candidate.txt";
 	
 	     List<String> candidateList = fileIO.getStockInfoList(filePath);
          int idx  = 1;
@@ -71,7 +75,7 @@ public class DodorianService {
     		     DodorianDTO dto = new DodorianDTO();
     		   
        
-			     logger.info("|-["+idx+"] "+candidateInfo[0]+"-----------------------------------------------------------------------------------------------------------------------------------|");
+    		     logger.info("|-["+idx+"] "+candidateInfo[0]+"-----------------------------------------------------------------------------------------------------------------------------------|");
 			     logger.info("| 1. ROE : "+ candidateInfo[1]+" | 2. stockCount : "+ candidateInfo[2] +" | 3. companyCapital : "+ candidateInfo[3]);
 			     logger.info("| 4. Enterprise Value : "+ decimalFormat(enterpriseValue) +" | 5. stockFirstPrice : "+ decimalFormat(stockFirstValue) +" | 6. stockSecondPrice : "+ decimalFormat(stockSecondValue));
 			     logger.info("| 7. Patient Value : " + decimalFormat(stockPatientValue));
