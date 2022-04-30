@@ -47,8 +47,12 @@ public class Convertor {
     			literal = sbf.replace(offset, limit, tobeWord).toString();
     			
     			if(literal.contains(asisWord)) {
-    				literal = literal.replaceAll(asisWord, tobeWord);
+    				// literal = literal.replaceAll(asisWord, tobeWord);
+    				// System.out.println(literal);
+    				return convert(literal, filterList);
     			}
+    			
+    			// return literal;
     		}
     		
     	}	
