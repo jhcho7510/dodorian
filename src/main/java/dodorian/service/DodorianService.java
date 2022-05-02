@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 import ch.qos.logback.classic.Logger;
 import dodorian.common.FileIO;
 import dodorian.dto.DodorianDTO;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Service
+@Slf4j
 public class DodorianService {
 	 /*
 	 private String companyName; // 기업명
@@ -42,6 +44,7 @@ public class DodorianService {
      }
 	
 	 private String decimalFormat(double stockPrice) {
+		 log.debug("123");
 		 DecimalFormat df = new DecimalFormat("#,###");
 		 return df.format(stockPrice);
 	 }
