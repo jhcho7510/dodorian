@@ -7,30 +7,23 @@ import javax.annotation.PostConstruct;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
 
 //import org.jsoup.Jsoup;
 //import org.jsoup.nodes.Document;
 //import org.jsoup.nodes.Element;
 //import org.jsou.select.Elements;
 
-
-
-
-
-
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
-import ch.qos.logback.classic.Logger;
 
 @Service
 public class DodorianCrawlingService {
 	private static String industryA = "http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&gicode=A007810&cID=&MenuYn=Y&ReportGB=&NewMenuID=101&stkGb=701";
 	private static String industryB = "https://finance.naver.com/sise/sise_group_detail.nhn?type=upjong&no=136";
 	
-	private  Logger logger   = (Logger) LoggerFactory.getLogger(this.getClass().getSimpleName());
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@PostConstruct
 	public void getCompanyList() throws IOException {

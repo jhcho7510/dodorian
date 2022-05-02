@@ -24,7 +24,6 @@ public class DodorianController {
 	
 	@GetMapping("/stockValuationList")
 	public ResponseEntity<List<DodorianDTO>> getList() {
-		 
 		return ResponseEntity.ok(service.getList());
 	}
 }

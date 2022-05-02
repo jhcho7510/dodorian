@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <!-- 콘솔로 로그를 남김 -->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <!-- 파일로 로그를 남김 -->
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:\\log\\logback.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
+            </Pattern>
+        </encoder>
+
+        <!-- 로그 파일이 10KB가 넘으면 새로운 로그 파일로 만드는 정책 -->
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10KB</MaxFileSize>
+        </triggeringPolicy>
+
+        <!-- 파일을 덮어쓰는 정책 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>C:\\log\\logback2.%i.log.zip</FileNamePattern>
+            <!--
+                MinIndex, MaxIndex => 로그 파일 정책
+                logback2.1.log.zip, logback2.2.log.zip, ...
+            -->
+            <MinIndex>1</MinIndex>
+            <MaxIndex>10</MaxIndex>
+        </rollingPolicy>
+    </appender>
+
+    <!-- dodorian 하위 패키지 -->
+    <logger name="dodorian"  level="debug" additivity="false">
+        <appender-ref ref="fileAppender" />
+    </logger>
+
+</configuration>
