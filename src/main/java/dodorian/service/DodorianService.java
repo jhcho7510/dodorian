@@ -46,7 +46,7 @@ public class DodorianService {
      }
 	
 	 private String decimalFormat(double stockPrice) {
-		 log.debug("123");
+		 //log.debug("123");
 		 DecimalFormat df = new DecimalFormat("#,###");
 		 return df.format(stockPrice);
 	 }

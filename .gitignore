@@ -35,3 +35,6 @@ build/
 **/bin/
 .metadata/
 *.bak
+*.log
+*.zip
+*.DS_Store
