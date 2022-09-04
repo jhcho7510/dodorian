@@ -37,7 +37,8 @@ public class ExcelDownload {
 //        familyList.add(headerVo);
 
 
-        final String fileName = "/Users/junhyoungcho/userList.xlsx";
+        // final String fileName = "/Users/junhyoungcho/userList.xlsx";
+        final String fileName = "C:\\excel_test\\userList.xlsx";
 
         /* 엑셀 그리기 */
         final String[] colNames = {
